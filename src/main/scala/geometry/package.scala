@@ -10,8 +10,11 @@
 **                   GPLv3
 */
 
-package fr.hsyl20.sunburn.core
+package fr.hsyl20.sunburn
 
-object CustomMath {
-    val invPi = 1.0 / Math.Pi
+package object geometry {
+   implicit def tupleWrapper(t: Tuple3[Double, Double, Double]) = Point3D(t._1, t._2, t._3)
+   implicit def intdouble(t: Int): Double = t
 }
+
+

@@ -12,20 +12,21 @@
 
 package fr.hsyl20.sunburn.samplers
 
-import sunburn.core._
+import fr.hsyl20.sunburn.core._
 
 class NRooksSampler(sampleCount : Int) extends Sampler(sampleCount) {
+   import scala.math._
 
     override def generate = {
         val sa = new Array[Sample](sampleCount)
         for (j <- 0 until sampleCount)
-            sa(j) = Sample((j + Math.random) / sampleCount, (j + Math.random) / sampleCount)
+            sa(j) = Sample((j + random) / sampleCount, (j + random) / sampleCount)
          shuffleX(sa)
          shuffleY(sa)
          sa
     }
 
-    def randomInt(max: Int) : Int = (Math.random * max).toInt
+    def randomInt(max: Int) : Int = (random * max).toInt
 
     def shuffleY(s : Array[Sample]) {
         for (i <- 0 until sampleCount) {

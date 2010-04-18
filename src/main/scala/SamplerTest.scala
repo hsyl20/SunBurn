@@ -10,14 +10,14 @@
 **                   GPLv3
 */
 
-package fr.hsyl20.sunburn.test
+package fr.hsyl20.sunburn
 
 import javax.swing._
 import java.awt.Color
 import java.awt.event._
-import sunburn.samplers._
+import fr.hsyl20.sunburn.samplers._
 import java.awt.image.BufferedImage
-import sunburn.core._
+import fr.hsyl20.sunburn.core._
 
 object SamplerTest {
 
@@ -28,7 +28,7 @@ object SamplerTest {
     /* Pixel width */
     val pixWidth = 2
 
-    val width = Math.sqrt(count) * colwidth
+    val width  = scala.math.sqrt(count).round.toInt * colwidth
     val realwidth = width+10
     var image : BufferedImage = new BufferedImage(realwidth,realwidth+10, BufferedImage.TYPE_INT_ARGB)
 
@@ -115,13 +115,14 @@ object SamplerTest {
     }
 
     def drawCircle(b: BufferedImage) : BufferedImage = {
+      import scala.math._
         val d = width / 2.0
         for (a <- 0 until 360) {
-            val x = Math.cos((a/2.0).toRadians) * d + d
-            val y = Math.sin((a/2.0).toRadians) * d + d
+            val x = cos((a/2.0).toRadians) * d + d
+            val y = sin((a/2.0).toRadians) * d + d
             b.setRGB(x.toInt, y.toInt, Color.BLACK.getRGB)
-            val x2 = Math.cos(a.toDouble.toRadians) * d + d
-            val y2 = Math.sin(a.toDouble.toRadians) * d + d
+            val x2 = cos(a.toDouble.toRadians) * d + d
+            val y2 = sin(a.toDouble.toRadians) * d + d
             b.setRGB(x2.toInt, y2.toInt, Color.BLACK.getRGB)
 
         }

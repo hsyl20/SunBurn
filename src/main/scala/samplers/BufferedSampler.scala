@@ -12,7 +12,7 @@
 
 package fr.hsyl20.sunburn.samplers
 
-import sunburn.core._
+import fr.hsyl20.sunburn.core._
 
 /**
  * This sampler takes another sampler as an input.
@@ -30,7 +30,7 @@ class BufferedSampler(sampler: Sampler, setCount: Int) extends Sampler(sampler.s
 
     override def generate = current match {
          case x :: xs => {current = xs ; x }
-         case Nil      => {current = sets.drop(1); sets.first}
+         case Nil      => {current = sets.drop(1); sets.head}
     }
 
 }

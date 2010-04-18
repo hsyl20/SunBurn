@@ -12,7 +12,7 @@
 
 package fr.hsyl20.sunburn.samplers
 
-import sunburn.core._
+import fr.hsyl20.sunburn.core._
 
 /**
  * This sampler shuffles samples from another sampler
@@ -22,7 +22,7 @@ import sunburn.core._
  **/
 class ShuffledSampler(sampler: Sampler) extends Sampler(sampler.sampleCount) {
 
-    private def randomInt(max: Int) : Int = (Math.random * max).toInt
+    private def randomInt(max: Int) : Int = (scala.math.random * max).toInt
 
     override def generate : Seq[Sample]= {    
         val s = sampler.generate()

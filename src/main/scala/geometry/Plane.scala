@@ -12,9 +12,9 @@
 
 package fr.hsyl20.sunburn.geometry
 
-import sunburn.core._
-import sunburn.geometry.Vector3D._
-import sunburn.materials._
+import fr.hsyl20.sunburn.core._
+import fr.hsyl20.sunburn.geometry.Vector3D._
+import fr.hsyl20.sunburn.materials._
 
 class Plane extends GeometricObject{
 

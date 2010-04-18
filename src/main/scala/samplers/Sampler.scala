@@ -12,10 +12,10 @@
 
 package fr.hsyl20.sunburn.samplers
 
-import sunburn.core.Sample
+import fr.hsyl20.sunburn.core.Sample
 
 abstract class Sampler(val sampleCount: Int) {
-    def generate() : Seq[Sample]
+    def generate(): Seq[Sample]
 }
 
 object NoSampler extends Sampler(1) {

@@ -12,9 +12,9 @@
 
 package fr.hsyl20.sunburn.geometry
 
-import sunburn.core._
-import sunburn.geometry.Vector3D._
-import sunburn.materials._
+import fr.hsyl20.sunburn.core._
+import fr.hsyl20.sunburn.geometry.Vector3D._
+import fr.hsyl20.sunburn.materials._
 
 class Sphere extends GeometricObject {
 
@@ -37,7 +37,7 @@ class Sphere extends GeometricObject {
 
         if (delta < 0.0) { None }
         else {
-            val e = Math.sqrt(delta)
+            val e = scala.math.sqrt(delta)
             val denom = 2.0 * a
             val t1 = (- b - e) / denom   //smaller root
 

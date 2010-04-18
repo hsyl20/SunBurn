@@ -12,7 +12,7 @@
 
 package fr.hsyl20.sunburn.colors
 
-import sunburn.core._
+import fr.hsyl20.sunburn.core._
 
 object Pixelizers {
     def average(s : Seq[Tuple2[Sample, RGBColor]]) : RGBColor = s match {

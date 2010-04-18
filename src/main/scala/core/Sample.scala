@@ -12,13 +12,18 @@
 
 package fr.hsyl20.sunburn.core
 
-import sunburn.colors._
-import sunburn.geometry.Point2D
+import fr.hsyl20.sunburn.colors._
+import fr.hsyl20.sunburn.geometry.Point2D
 
-package object core {
-   implicit def sample2point(s:Sample): Point2D = Point2D(s.x, s.y)
+class Sample(x:Double, y:Double) extends Point2D(x,y)
+
+object Sample {
+   def apply(x:Double, y:Double): Sample = new Sample(x,y)
+   def unapply(s:Sample) = Some(s.x, s.y)
 }
 
-case class Sample(x : Double, y: Double)
+class ColoredSample(x:Double, y:Double, color:RGBColor)
 
-case class ColoredSample(x: Double, y: Double, color: RGBColor)
+object ColoredSample {
+   def apply(x:Double, y:Double, color:RGBColor) = new ColoredSample(x,y,color)
+}

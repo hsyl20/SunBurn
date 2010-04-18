@@ -12,10 +12,10 @@
 
 package fr.hsyl20.sunburn.materials.brdf
 
-import sunburn.colors.RGBColor
-import sunburn.core._
-import sunburn.geometry._
-import sunburn.samplers._
+import fr.hsyl20.sunburn.colors.RGBColor
+import fr.hsyl20.sunburn.core._
+import fr.hsyl20.sunburn.geometry._
+import fr.hsyl20.sunburn.samplers._
 
 /**
  * This class caracterizes the reflection of light on a surface

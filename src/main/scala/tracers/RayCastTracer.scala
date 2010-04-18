@@ -12,8 +12,8 @@
 
 package fr.hsyl20.sunburn.tracers
 
-import sunburn.colors._
-import sunburn.core._
+import fr.hsyl20.sunburn.colors._
+import fr.hsyl20.sunburn.core._
 
 class RayCastTracer(world: World) extends Tracer(world) {
 

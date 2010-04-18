@@ -12,8 +12,8 @@
 
 package fr.hsyl20.sunburn.materials
 
-import sunburn.core._
-import sunburn.colors._
+import fr.hsyl20.sunburn.core._
+import fr.hsyl20.sunburn.colors._
 
 class ColorMaterial(color: RGBColor) extends Material {
     

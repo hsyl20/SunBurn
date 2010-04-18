@@ -12,9 +12,9 @@
 
 package fr.hsyl20.sunburn.tracers
 
-import sunburn.colors._
-import sunburn.geometry._
-import sunburn.core._
+import fr.hsyl20.sunburn.colors._
+import fr.hsyl20.sunburn.geometry._
+import fr.hsyl20.sunburn.core._
 
 abstract class Tracer(world: World) {
 

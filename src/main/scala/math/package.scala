@@ -10,12 +10,8 @@
 **                   GPLv3
 */
 
-package fr.hsyl20.sunburn.samplers
+package fr.hsyl20.sunburn
 
-import fr.hsyl20.sunburn.core._
-
-class RandomSampler(sampleCount: Int) extends Sampler(sampleCount) {
-
-    override def generate = for (p <- 0 until sampleCount)
-           yield  Sample(scala.math.random, scala.math.random)
+package object math {
+    val invPi = 1.0 / scala.math.Pi
 }

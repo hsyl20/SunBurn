@@ -12,11 +12,11 @@
 
 package fr.hsyl20.sunburn.samplers
 
-import sunburn.core._
+import fr.hsyl20.sunburn.core._
 
 class RegularSampler(sampleCount: Int) extends Sampler(sampleCount) {
     
-    private val n = Math.sqrt(sampleCount)
+    private val n = scala.math.sqrt(sampleCount).round.toInt
     private val sampleWidth = 1.0 / n
 
     override def generate =

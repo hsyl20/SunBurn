@@ -14,9 +14,9 @@ package fr.hsyl20.sunburn.cameras
 
 import java.awt.image.BufferedImage
 
-import sunburn.geometry._
-import sunburn.core._
-import sunburn.colors._
+import fr.hsyl20.sunburn.geometry._
+import fr.hsyl20.sunburn.core._
+import fr.hsyl20.sunburn.colors._
 
 class OrthographicCamera(world: World, viewPlane: ViewPlane) extends Camera(world, viewPlane) {
 

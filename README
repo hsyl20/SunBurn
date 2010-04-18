@@ -10,12 +10,12 @@
 **                   GPLv3
 */
 
-package fr.hsyl20.sunburn.samplers
 
-import fr.hsyl20.sunburn.core._
+This project uses Maven 2
 
-class RandomSampler(sampleCount: Int) extends Sampler(sampleCount) {
 
-    override def generate = for (p <- 0 until sampleCount)
-           yield  Sample(scala.math.random, scala.math.random)
-}
+Available targets:
+-----------------
+Example scene: mvn scala:run
+Samplers test: mvn -Dlauncher=SamplerTest scala:run
+

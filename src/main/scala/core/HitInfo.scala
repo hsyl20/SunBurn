@@ -12,9 +12,9 @@
 
 package fr.hsyl20.sunburn.core
 
-import sunburn.geometry._
-import sunburn.colors._
-import sunburn.materials._
+import fr.hsyl20.sunburn.geometry._
+import fr.hsyl20.sunburn.colors._
+import fr.hsyl20.sunburn.materials._
 
 
 /**

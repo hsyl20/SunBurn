@@ -1,18 +1,23 @@
-/*
- * Lambertian.scala
- *
- * @author Sylvain HENRY
- * @license GPL v3
- */
+/*                  ______                  
+**                  | ___ \                 
+**   ___ _   _ _ __ | |_/ /_   _ _ __ _ __  
+**  / __| | | | '_ \| ___ \ | | | '__| '_ \ 
+**  \__ \ |_| | | | | |_/ / |_| | |  | | | |
+**  |___/\__,_|_| |_\____/ \__,_|_|  |_| |_|
+**
+**             SunBurn RayTracer
+**        http://www.hsyl20.fr/sunburn
+**                   GPLv3
+*/
 
-package sunburn.materials.brdf
+package fr.hsyl20.sunburn.materials.brdf
 
-import sunburn.colors.RGBColor
-import sunburn.colors.RGBColor._
-import sunburn.core._
-import sunburn.geometry._
-import sunburn.samplers.Sampler
-import sunburn.core.CustomMath._
+import fr.hsyl20.sunburn.colors.RGBColor
+import fr.hsyl20.sunburn.colors.RGBColor._
+import fr.hsyl20.sunburn.core._
+import fr.hsyl20.sunburn.math._
+import fr.hsyl20.sunburn.geometry._
+import fr.hsyl20.sunburn.samplers.Sampler
 
 
 /**

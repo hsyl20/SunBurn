@@ -12,7 +12,7 @@
 
 package fr.hsyl20.sunburn.samplers
 
-import sunburn.core._
+import fr.hsyl20.sunburn.core._
 
 class HammersleySampler(sampleCount : Int) extends Sampler(sampleCount) {
 

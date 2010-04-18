@@ -12,9 +12,9 @@
 
 package fr.hsyl20.sunburn.lights
 
-import sunburn.core._
-import sunburn.geometry._
-import sunburn.colors._
+import fr.hsyl20.sunburn.core._
+import fr.hsyl20.sunburn.geometry._
+import fr.hsyl20.sunburn.colors._
 
 abstract class Light {
     def getDirection(hi: HitInfo): Vector3D

@@ -12,10 +12,10 @@
 
 package fr.hsyl20.sunburn.cameras
 
-import sunburn.core._
-import sunburn.geometry._
-import sunburn.geometry.Vector3D._
-import sunburn.samplers._
+import fr.hsyl20.sunburn.core._
+import fr.hsyl20.sunburn.geometry._
+import fr.hsyl20.sunburn.geometry.Vector3D._
+import fr.hsyl20.sunburn.samplers._
 
 class ThinsLensCamera(world: World, viewPlane: ViewPlane) extends Camera(world, viewPlane) {
 
@@ -30,7 +30,7 @@ class ThinsLensCamera(world: World, viewPlane: ViewPlane) extends Camera(world, 
     protected def computeRay(x: Double, y:Double) : Ray = {
         if (samples.isEmpty)
             samples = sampler.generate
-        val dp = samples.first
+        val dp = samples.head
 
         samples = samples.drop(1)
 

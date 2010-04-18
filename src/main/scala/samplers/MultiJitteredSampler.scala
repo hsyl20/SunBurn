@@ -12,25 +12,27 @@
 
 package fr.hsyl20.sunburn.samplers
 
-import sunburn.core._
+import fr.hsyl20.sunburn.core._
 
 class MultiJitteredSampler(sampleCount: Int) extends Sampler(sampleCount)  {
+   import scala.math._
 
-    private val n = Math.sqrt(sampleCount)
+    private val n = sqrt(sampleCount).round.toInt
     private val width = 1.0 / n
     private val subwidth = 1.0 / (n*n)
 
-    override def generate : Array[Sample] = {
+    override def generate: Seq[Sample] = {
         val sa = new Array[Sample](n*n)
 
         for (i <- 0 until n; j <- 0 until n)
-            sa(i+j*n) = Sample(i * width + j*subwidth + Math.random*subwidth, j * width + i*subwidth + Math.random*subwidth)
+            sa(i+j*n) = Sample(i * width + j*subwidth + random*subwidth, j * width + i*subwidth + random*subwidth)
+
         shuffleX(sa, n)
         shuffleY(sa, n)
         sa
     }
 
-    def randomInt(max: Int) : Int = (Math.random * max).toInt
+    def randomInt(max: Int) : Int = (random * max).toInt
 
     def shuffleY(s : Array[Sample], n: Int) {
         for (i <- 0 until n; j <- 0 until n) {

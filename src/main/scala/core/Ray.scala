@@ -12,6 +12,6 @@
 
 package fr.hsyl20.sunburn.core
 
-import sunburn.geometry._
+import fr.hsyl20.sunburn.geometry._
 
 case class Ray(origin: Point3D, direction: Vector3D)

@@ -12,16 +12,16 @@
 
 package fr.hsyl20.sunburn
 
-import sunburn.geometry._
-import sunburn.geometry.Vector3D._
-import sunburn.core._
+import fr.hsyl20.sunburn.geometry._
+import fr.hsyl20.sunburn.geometry.Vector3D._
+import fr.hsyl20.sunburn.core._
 
-import sunburn.samplers._
-import sunburn.colors._
-import sunburn.colors.RGBColor._
-import sunburn.materials._
-import sunburn.cameras._
-import sunburn.lights._
+import fr.hsyl20.sunburn.samplers._
+import fr.hsyl20.sunburn.colors._
+import fr.hsyl20.sunburn.colors.RGBColor._
+import fr.hsyl20.sunburn.materials._
+import fr.hsyl20.sunburn.cameras._
+import fr.hsyl20.sunburn.lights._
 
 import scala.actors.Futures._
 
@@ -52,8 +52,8 @@ object Main {
             },
 
             new Plane {
-                point = (0,0,0)
-                normal = (0.0, 1.0, 0)
+                point = Point3D(0)
+                normal = Point3D(0, 1, 0)
                 material = new MatteMaterial {
                     color = RGBColor(0.2,0.2,0.2)
                     diffuse = 2.2
@@ -73,7 +73,7 @@ object Main {
             new PointLight {
                 intensity = 8.0
                 color = White
-                location =  (10,30,10)
+                location = Point3D(10, 30, 10)
             }
         )
      }

@@ -16,7 +16,7 @@ import java.awt.image.BufferedImage
 import javax.swing.{JLabel, JFrame, ImageIcon, SwingUtilities}
 import java.util.{Timer, TimerTask}
 
-import sunburn.cameras._
+import fr.hsyl20.sunburn.cameras._
 
 class Displayer(camera: Camera) {
 

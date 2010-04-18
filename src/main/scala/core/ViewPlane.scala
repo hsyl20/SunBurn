@@ -12,8 +12,8 @@
 
 package fr.hsyl20.sunburn.core
 
-import sunburn.geometry.Point3D
-import sunburn.samplers._
+import fr.hsyl20.sunburn.geometry.Point3D
+import fr.hsyl20.sunburn.samplers._
 
 
 /**

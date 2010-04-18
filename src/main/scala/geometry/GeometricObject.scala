@@ -12,9 +12,9 @@
 
 package fr.hsyl20.sunburn.geometry
 
-import sunburn.core._
-import sunburn.colors._
-import sunburn.materials._
+import fr.hsyl20.sunburn.core._
+import fr.hsyl20.sunburn.colors._
+import fr.hsyl20.sunburn.materials._
 
 abstract class GeometricObject {
     var material : Material = new ColorMaterial(RGBColor.Black)

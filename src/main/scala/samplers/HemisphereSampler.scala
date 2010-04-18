@@ -12,12 +12,12 @@
 
 package fr.hsyl20.sunburn.samplers
 
-import sunburn.geometry.Point3D
+import fr.hsyl20.sunburn.geometry.Point3D
 
 class HemisphereSampler(sampler: Sampler, e: Double) {
 
     def generate(): Seq[Point3D] = {
-        import Math._
+        import scala.math._
         val samples = sampler.generate()
 
         for (s <- samples) yield {

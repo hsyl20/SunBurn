@@ -12,9 +12,8 @@
 
 package fr.hsyl20.sunburn.colors
 
-import java.lang.Math._
-
-case class RGBColor(r: Double, g: Double, b: Double) extends Tuple3(r,g,b) {
+class RGBColor(val r:Double, val g:Double, val b:Double) extends Tuple3(r,g,b) {
+   import scala.math._
 
     def + (c : RGBColor) : RGBColor = RGBColor(r+c.r, g+c.g, b+c.b)
 
@@ -28,13 +27,13 @@ case class RGBColor(r: Double, g: Double, b: Double) extends Tuple3(r,g,b) {
     def clampTo(c: RGBColor) : RGBColor = if (r >1.0 || g >1.0 || b > 1.0) c else this
 
     def fitScale : RGBColor = {
-        val m = Math.max(Math.max(r, g), b)
+        val m = max(max(r, g), b)
         if (m> 1.0) RGBColor(r / m, g / m,b / m)
         else this
     }
 
     def fullRangeScale : RGBColor = {
-        val m = Math.max(Math.max(r,g),b)
+        val m = max(max(r,g),b)
         RGBColor(r/m, g/m, b/m)
     }
 
@@ -46,6 +45,8 @@ class DoubleWrapper(d: Double) {
 }
 
 object RGBColor {
+   def apply(r:Double, g:Double, b:Double) = new RGBColor(r,g,b)
+
     implicit def doubleWrapper(d: Double) : DoubleWrapper = {
         new DoubleWrapper(d)
     }

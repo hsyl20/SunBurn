@@ -13,11 +13,11 @@
 package fr.hsyl20.sunburn.cameras
 
 import java.awt.image.BufferedImage
-import sunburn.geometry._
-import sunburn.core._
-import sunburn.samplers._
-import sunburn.colors._
-import sunburn.tracers._
+import fr.hsyl20.sunburn.geometry._
+import fr.hsyl20.sunburn.core._
+import fr.hsyl20.sunburn.samplers._
+import fr.hsyl20.sunburn.colors._
+import fr.hsyl20.sunburn.tracers._
 
 import scala.actors.Futures._
 import scala.actors._
@@ -25,13 +25,14 @@ import scala.actors._
 
 //TODO: implement roll
 abstract class Camera(world: World, viewPlane: ViewPlane) {
+   import scala.math._
 
     var eye: Point3D    = Point3D(0,10,10)
     var lookat: Point3D = Point3D(0,0,0)
 
     val up = Vector3D(0,1,0)
 
-    private val vertical = Math.abs((eye - lookat) * up) == 1
+    private val vertical = abs((eye - lookat) * up) == 1
     protected lazy val w = if (vertical) Vector3D(0,1,0) else (eye -  lookat).normalize
     protected lazy val u = if (vertical) Vector3D(0,0,1) else (up ^ w).normalize
     protected lazy val v = if (vertical) Vector3D(1,0,0) else w ^ u

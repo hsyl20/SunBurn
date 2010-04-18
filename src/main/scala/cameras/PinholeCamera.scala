@@ -12,9 +12,9 @@
 
 package fr.hsyl20.sunburn.cameras
 
-import sunburn.core._
-import sunburn.geometry._
-import sunburn.geometry.Vector3D._
+import fr.hsyl20.sunburn.core._
+import fr.hsyl20.sunburn.geometry._
+import fr.hsyl20.sunburn.geometry.Vector3D._
 
 class PinholeCamera(world: World, viewPlane: ViewPlane) extends Camera(world: World, viewPlane: ViewPlane) {
     var viewDistance: Double = 1.0
