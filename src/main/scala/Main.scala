@@ -82,7 +82,7 @@ object Main {
     val vp = new ViewPlane {
         size = (800,600)
         resolution = 0.2
-        //sampler = new BufferedSampler(new ShuffledSampler(new MultiJitteredSampler(16)))
+        sampler = new BufferedSampler(new ShuffledSampler(new MultiJitteredSampler(16)))
     }
 
     val c = new PinholeCamera(myworld, vp) {
