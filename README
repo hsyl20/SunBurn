@@ -9,13 +9,3 @@
 **        http://www.hsyl20.fr/sunburn
 **                   GPLv3
 */
-
-
-This project uses Maven 2
-
-
-Available targets:
------------------
-Example scene: mvn scala:run
-Samplers test: mvn -Dlauncher=SamplerTest scala:run
-
