@@ -17,15 +17,18 @@ import fr.hsyl20.sunburn.geometry._
 import fr.hsyl20.sunburn.geometry.Vector3D._
 import fr.hsyl20.sunburn.samplers._
 
-class ThinsLensCamera(world: World, viewPlane: ViewPlane) extends Camera(world, viewPlane) {
+class ThinLensCamera(
+  val world:World,
+  val viewPlane:ViewPlane,
+  val eye:Point3D,
+  val lookat:Point3D,
+  val up:Vector3D,
+  val viewDistance:Double,
+  val focalDistance:Double,
+  val lensRadius:Double,
+  val sampler:DiscSampler) extends Camera {
 
-
-    var viewDistance: Double = 10.0
-    var focalDistance: Double = 10.0
-    var lensRadius: Double = 0.5
-    var sampler: DiscSampler = new RotationDiscSampler(new MultiJitteredSampler(viewPlane.sampler.sampleCount))
-
-    var samples = sampler.generate
+    protected var samples = sampler.generate
 
     protected def computeRay(x: Double, y:Double) : Ray = {
         if (samples.isEmpty)
@@ -43,4 +46,19 @@ class ThinsLensCamera(world: World, viewPlane: ViewPlane) extends Camera(world, 
         Ray(origin, direction)
     }
 
+}
+
+object ThinLensCamera {
+  def apply(world:World,
+            viewPlane:ViewPlane,
+            eye:Point3D = Point3D(0,10,10),
+            lookat:Point3D = Point3D(0,0,0),
+            up:Vector3D = Vector3D(0,1,0),
+            viewDistance:Double = 10.0,
+            focalDistance:Double = 10.0,
+            lensRadius:Double = 0.5,
+            sampler:DiscSampler = null) = {
+    val _sampler = if (sampler != null) sampler else new RotationDiscSampler(new MultiJitteredSampler(viewPlane.sampler.sampleCount))
+    new ThinLensCamera(world,viewPlane,eye,lookat,up,viewDistance,focalDistance,lensRadius,_sampler)
+  }
 }

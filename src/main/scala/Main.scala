@@ -85,27 +85,32 @@ object Main {
         sampler = new BufferedSampler(new ShuffledSampler(new MultiJitteredSampler(16)))
     }
 
-    val c = new PinholeCamera(myworld, vp) {
-
-        eye =  Point3D(0,25,20)
-        lookat = Point3D(0,15,0)
+    val c = PinholeCamera (
+        world = myworld,
+        viewPlane = vp,
+        eye = Point3D(0,25,20),
+        lookat = Point3D(0,15,0),
         viewDistance = 50.0
-    }
+    )
 
-    val c2 = new ThinsLensCamera(myworld, vp) {
-        eye =  Point3D(0,40,40)
-        lookat = Point3D(0,0,0)
-        viewDistance = 50.0
-        focalDistance = 40.0
-        lensRadius = 2.0
+    val c2 = ThinLensCamera (
+        world = myworld,
+        viewPlane = vp,
+        eye = Point3D(0,40,40),
+        lookat = Point3D(0,0,0),
+        viewDistance = 50.0,
+        focalDistance = 40.0,
+        lensRadius = 2.0,
         sampler = new RotationDiscSampler(new ShuffledSampler(new MultiJitteredSampler(16)))
-    }
+    )
 
     /*BUGGY (see class file)
-     val c = new OrthographicCamera(myworld, vp) {
-        eye =  Point3D(0,40,40)
+    val c = OrthographicCamera(
+        world = myworld,
+        viewPlane = vp,
+        eye =  Point3D(0,40,40),
         lookat = Point3D(0,0,0)
-    }*/
+    )*/
 
     //val r2 = new Displayer(c2)
     //future(c2.render)

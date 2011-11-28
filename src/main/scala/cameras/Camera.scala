@@ -24,13 +24,14 @@ import scala.actors._
 
 
 //TODO: implement roll
-abstract class Camera(world: World, viewPlane: ViewPlane) {
+trait Camera {
    import scala.math._
 
-    var eye: Point3D    = Point3D(0,10,10)
-    var lookat: Point3D = Point3D(0,0,0)
-
-    val up = Vector3D(0,1,0)
+    val lookat:Point3D
+    val eye:Point3D
+    val up:Vector3D
+    val world:World
+    val viewPlane:ViewPlane
 
     private val vertical = abs((eye - lookat) * up) == 1
     protected lazy val w = if (vertical) Vector3D(0,1,0) else (eye -  lookat).normalize
